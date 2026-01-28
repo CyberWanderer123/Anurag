@@ -333,7 +333,7 @@ what actually matters in the early stages.
         <div className="mt-20 max-w-4xl mx-auto fade-in-scroll">
           <div className="p-8 bg-gradient-to-br from-slate-900/50 to-slate-900/30 border border-slate-800/50 rounded-2xl">
             <p className="text-lg text-slate-300 leading-relaxed mb-4">
-              <span className="text-white font-semibold">Here's how I work:</span> We start with a clear scope call where I make sure I understand your goals, users, and constraints. Then I break the project into weekly milestones so you always know what's happening.
+              <span className="text-white font-semibold">Here&apos;s how I work:</span> We start with a clear scope call where I make sure I understand your goals, users, and constraints. Then I break the project into weekly milestones so you always know what&apos;s happening.
             </p>
             <p className="text-lg text-slate-300 leading-relaxed">
               Every Friday, you get a demo. Every commit is clean. And when we launch, you get full documentation and 
@@ -566,7 +566,7 @@ function CaseStudiesSection({ caseStudies, expandedCase, setExpandedCase }) {
                                 <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
                               ))}
                             </div>
-                            <p className="text-slate-300 italic mb-4">"{study.testimonial.text}"</p>
+                            <p className="text-slate-300 italic mb-4">&quot;{study.testimonial.text}&quot;</p>
                             <div className="text-sm text-slate-500">— {study.testimonial.author}</div>
                           </div>
                         )}
@@ -756,7 +756,7 @@ function TestimonialsSection({ testimonials }) {
                   <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
                 ))}
               </div>
-              <p className="text-slate-400 mb-6 italic">"{test.text}"</p>
+              <p className="text-slate-400 mb-6 italic">&quot;{test.text}&quot;</p>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
                   {test.avatar}
@@ -788,7 +788,7 @@ function ContactSection() {
 
           <div className="relative">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
-              Let's Build Something Great
+              Let&apos;s Build Something Great
             </h2>
 
             <p className="text-xl text-slate-400 mb-8">

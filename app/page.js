@@ -75,20 +75,20 @@ function HeroSection({ scrollToSection, techStack }) {
 
   {/* New Headline */}
   <h1 className="text-3xl sm:text-2xl lg:text-4xl font-bold mb-6 leading-tight text-white">
-    I Build MVPs & SaaS Products<br />for Founders — Fast.
+    I Help Teams Turn Ideas Into Reliable, Production-Ready Web Products
   </h1>
 
   {/* Subtext */}
   <p className="text-xl text-slate-400 mb-8 leading-relaxed">
-   I work closely with founders to design and build clean, scalable products
-using React, Next.js, Node.js, and Postgres. You get regular demos,
-clear communication, and code that’s ready for real users.
+  I help teams turn requirements into reliable web products —
+from marketing websites to internal tools and early-stage platforms.
+Clear scope, predictable delivery, and systems that are actually used.
   </p>
 
   {/* CTA Buttons */}
   <div className="flex flex-col sm:flex-row gap-4 mb-12">
     <button
-      onClick={() => window.open('https://your-calcom-link.com', '_blank')}
+      onClick={() => window.open('https://cal.com/anurag4518/intro-call', '_blank')}
       className="group px-8 py-4 bg-white text-black rounded-lg font-medium hover:bg-slate-100 transition-all flex items-center justify-center gap-2"
     >
       Have a quick intro call
@@ -268,9 +268,11 @@ function AboutSection({ counters, aboutRef }) {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 fade-in-scroll">
           <p className="text-slate-400 text-xl max-w-3xl mx-auto leading-relaxed">
-           I work as a hands-on technical partner for founders — helping turn ideas
-into real products. I focus on clarity, clean code, and building only
-what actually matters in the early stages.
+        I work as a hands-on execution partner, helping turn ideas and requirements
+into reliable systems that support real business operations.
+
+My focus is on clarity, predictable delivery, and building only what actually
+matters — so products don’t fall apart once real users start using them.
           </p>
         </div>
 
@@ -379,7 +381,7 @@ function SkillsSection() {
     <section id="skills" className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-center text-white fade-in-scroll">
-          Technical Skills
+          Implementation Capabilities
         </h2>
         <p className="text-center text-slate-400 mb-16 fade-in-scroll">
           Full-stack expertise across modern technologies
@@ -776,7 +778,7 @@ function TestimonialsSection({ testimonials }) {
 
 function ContactSection() {
   const openCalCom = () => {
-    window.open("https://cal.com/anurag4518/20min", "_blank", "noopener,noreferrer");
+    window.open("https://cal.com/anurag4518/intro-call", "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -788,7 +790,8 @@ function ContactSection() {
 
           <div className="relative">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
-              Let&apos;s Build Something Great
+             Let’s Talk About Your Project
+
             </h2>
 
             <p className="text-xl text-slate-400 mb-8">
@@ -1074,8 +1077,8 @@ export default function Portfolio() {
 
   const services = [
     {
-      title: "MVP Development",
-      desc: "Launch your product idea in 3-6 weeks with a fully functional prototype.",
+      title: "Web Development",
+      desc: "End-to-end development support for web products and internal tools. Best for teams that need reliable execution without long-term hiring.",
       features: ["Full-stack development", "Database design", "Authentication", "Payment integration"],
       icon: Rocket,
       price: "From $5,000"

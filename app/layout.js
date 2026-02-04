@@ -25,7 +25,7 @@ export const metadata = {
     title: "Anurag Sagar — Full-Stack Web Developer",
     description:
       "I help teams turn ideas into reliable, production-ready web products — from MVPs to scalable SaaS platforms.",
-    url: "https://anuragsagar.com",
+    url: "https://anurag-iota.vercel.app/",
     siteName: "Anurag Sagar",
     images: [
       {
@@ -52,3 +52,16 @@ export const metadata = {
     follow: true,
   },
 };
+
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}

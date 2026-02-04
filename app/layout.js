@@ -29,7 +29,7 @@ export const metadata = {
     siteName: "Anurag Sagar",
     images: [
       {
-        url: "/og.png",
+        url: "assets/og.png",
         width: 1200,
         height: 630,
         alt: "Anurag Sagar — Full-Stack Web Developer",

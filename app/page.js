@@ -163,6 +163,7 @@ function ClientLogosSection() {
   const clients = [
     { name: "Guardian Media", logo: "/assets/Guardian_Logo.png" },
     { name: "The Adynex", logo: "/assets/Logo.png" },
+    {name: 'DTL Energy Solutions', logo: '/assets/DTL.webp'},
     {name: 'Fingerring Matrimony', logo: '/assets/fingerring.jpg'},
     {name: 'Unisoft', logo: '/assets/unisoft2.png'},
   ];
@@ -248,7 +249,7 @@ function ClientLogosSection() {
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="h-16 w-32 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-16 w-32 object-contain filter  transition-all duration-300"
                     />
                   </div>
                 </div>
@@ -1060,12 +1061,21 @@ export default function Portfolio() {
       name: "Guardian Media",
       description: "A company that designs theme parks.",
       tech: ["React", "Tailwind"],
-      color: "from-blue-500 to-cyan-500",
+      color: "from-gray-100 to-white",
       image: "/assets/Guardian_Logo.png",
       demoUrl: "https://www.guardian.media/",
     },
     {
       id: 2,
+      name: "DTL Energy Solutions",
+      description: "Landing page for a Lighting solutions provider..",
+      tech: ["Next.js", "Tailwind"],
+      color: "from-blue-500 to-cyan-500",
+      image: "/assets/DTL.webp",
+      demoUrl: "https://www.dtlenergysolutions.com/",
+    },
+    {
+      id: 3,
       name: "The Adynex",
       description: "Landing page for a marketing agency.",
       tech: ["Next.js", "Tailwind"],

@@ -430,7 +430,7 @@ function FeaturedSystem() {
              {/* Live link */}
             <div className="pt-4">
               <a
-                href="https://codemarathi.com" // replace with actual URL
+                href="https://codemarathi.in" // replace with actual URL
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500/10 border border-blue-500/30 rounded-lg text-blue-400 hover:bg-blue-500/20 transition-colors"

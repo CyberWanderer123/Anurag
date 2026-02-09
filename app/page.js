@@ -4,6 +4,17 @@ import { ArrowRight, Code, Rocket, Users, Menu, X, Star, ChevronRight, Mail, Lin
 
 // Navigation Component
 function Navigation({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection }) {
+  const navItems = [
+  { label: 'Home', id: 'home' },
+  { label: 'About', id: 'about' },
+  { label: 'Featured Project', id: 'featured' },
+  { label: 'Case Studies', id: 'cases' },
+  { label: 'Portfolio', id: 'portfolio' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'Services', id: 'services' },
+  { label: 'Contact', id: 'contact' },
+];
+
   return (
     <nav className="fixed top-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,23 +24,24 @@ function Navigation({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection 
           </div>
           
           <div className="hidden md:flex space-x-8">
-            {['Home', 'About',  'Cases', 'Portfolio','Skills', 'Services', 'Contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
-                className={`text-sm font-medium transition-colors relative ${
-                  activeSection === item.toLowerCase()
-                    ? 'text-white'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-              >
-                {item}
-                {activeSection === item.toLowerCase() && (
-                  <span className="absolute -bottom-5 left-0 w-full h-0.5 bg-white" />
-                )}
-              </button>
-            ))}
-          </div>
+  {navItems.map(({ label, id }) => (
+    <button
+      key={id}
+      onClick={() => scrollToSection(id)}
+      className={`text-sm font-medium transition-colors relative ${
+        activeSection === id
+          ? 'text-white'
+          : 'text-slate-400 hover:text-white'
+      }`}
+    >
+      {label}
+      {activeSection === id && (
+        <span className="absolute -bottom-5 left-0 w-full h-0.5 bg-white" />
+      )}
+    </button>
+  ))}
+</div>
+
 
           <button
             className="md:hidden text-slate-400"
@@ -40,21 +52,26 @@ function Navigation({ activeSection, isMenuOpen, setIsMenuOpen, scrollToSection 
         </div>
       </div>
 
-      {isMenuOpen && (
-        <div className="md:hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-800/50">
-          <div className="px-4 py-4 space-y-2">
-            {['Home', 'About', 'Cases', 'Portfolio','Skills', 'Services', 'Contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
-                className="block w-full text-left px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-all"
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+     {isMenuOpen && (
+  <div className="md:hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-800/50">
+    <div className="px-4 py-4 space-y-2">
+      {navItems.map(({ label, id }) => (
+        <button
+          key={id}
+          onClick={() => scrollToSection(id)}
+          className={`block w-full text-left px-4 py-3 rounded-lg transition-all ${
+            activeSection === id
+              ? 'bg-slate-800 text-white'
+              : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+          }`}
+        >
+          {label}
+        </button>
+      ))}
+    </div>
+  </div>
+)}
+
     </nav>
   );
 }
@@ -96,7 +113,7 @@ Clear scope, predictable delivery, and systems that are actually used.
     </button>
 
     <button
-      onClick={() => scrollToSection('cases')}
+      onClick={() => scrollToSection('case studies')}
       className="px-8 py-4 border border-slate-700 rounded-lg font-medium hover:bg-slate-800/50 transition-colors text-slate-300"
     >
       See Case Studies
@@ -355,6 +372,11 @@ function FeaturedSystem() {
       id="featured"
       className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-b border-slate-800/50"
     >
+       <span
+        id="featured-anchor"
+        className="absolute top-0"
+        aria-hidden
+      />
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl sm:text-5xl text-center font-bold text-white mb-4">
          Featured Project
@@ -935,15 +957,38 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'cases', 'portfolio', 'services', 'testimonials', 'contact'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
+    const sections = [
+  'home',
+  'about',
+  'featured-anchor',
+  'cases',
+  'portfolio',
+  'skills',
+  'services',
+  'testimonials',
+  'contact',
+];
+
+     const offset = 120; // navbar height + buffer
+let currentSection = null;
+
+for (const section of sections) {
+  const el = document.getElementById(section);
+  if (!el) continue;
+
+  const rect = el.getBoundingClientRect();
+  if (rect.top - offset <= 0) {
+    currentSection = section;
+  }
+}
+
+if (currentSection === 'featured-anchor') {
+  setActiveSection('featured');
+} else if (currentSection) {
+  setActiveSection(currentSection);
+}
+
+
       if (current) setActiveSection(current);
 
       if (aboutRef.current && !hasAnimated) {

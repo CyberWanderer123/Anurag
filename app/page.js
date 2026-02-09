@@ -349,6 +349,83 @@ matters — so products don’t fall apart once real users start using them.
   );
 }
 
+function FeaturedSystem() {
+  return (
+    <section
+      id="featured"
+      className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-b border-slate-800/50"
+    >
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl sm:text-5xl text-center font-bold text-white mb-4">
+         Featured Project
+        </h2>
+        <p className="text-slate-400 mb-12 text-center">
+          A production-grade full-stack platform showcasing system-level thinking,
+          backend ownership, and real-world workflows.
+        </p>
+
+        <div className="grid lg:grid-cols-5 gap-10 items-start">
+          {/* Video */}
+          <div className="lg:col-span-3">
+            <div className="aspect-video rounded-2xl overflow-hidden border border-slate-800">
+              <iframe
+                src="https://www.youtube.com/embed/cXiIUS1Tqts"
+                frameBorder={0}
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  className="w-full h-full"
+              />
+            </div>
+            <p className="text-xs text-slate-500 mt-2">
+              System workflow preview (admin side omitted due to NDA)
+            </p>
+          </div>
+
+          {/* Context */}
+          <div className="lg:col-span-2 space-y-6 mt-16">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Code Marathi — Course Platform
+              </h3>
+              <p className="text-slate-400 text-sm">
+                Built for a YouTuber as a scalable learning platform with admin
+                control, student dashboards, progress tracking, and certification logic.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-semibold text-white uppercase tracking-wide mb-3">
+                System Scope
+              </h4>
+              <ul className="space-y-2 text-slate-400 text-sm">
+                <li>• Admin-managed courses, lessons, blogs, coding problems</li>
+                <li>• Student dashboards with progress & gated access</li>
+                <li>• Admin-side student progress & certification tracking</li>
+                <li>• Backend APIs and evolvable data models</li>
+                <li>• Performance & SEO optimization</li>
+              </ul>
+            </div>
+             {/* Live link */}
+            <div className="pt-4">
+              <a
+                href="https://codemarathi.com" // replace with actual URL
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500/10 border border-blue-500/30 rounded-lg text-blue-400 hover:bg-blue-500/20 transition-colors"
+              >
+                View Live Platform
+              </a>
+              <p className="text-xs text-slate-500 mt-2">
+                Live student-facing platform. Admin access is restricted.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Skills Section Component
 function SkillsSection() {
   const skillCategories = [
@@ -426,7 +503,7 @@ function CaseStudiesSection({ caseStudies, expandedCase, setExpandedCase }) {
     <section id="cases" className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-center text-white fade-in-scroll">
-          Featured Work
+          Case Studies
         </h2>
         <p className="text-center text-slate-400 mb-16 fade-in-scroll">Real projects, real results — detailed breakdowns of my work</p>
         
@@ -1191,7 +1268,7 @@ His process was smooth, fast, and extremely reliable. I’ve already recommended
           aboutRef={aboutRef}
         />
 
-      
+      <FeaturedSystem/>
 
         <CaseStudiesSection 
           caseStudies={caseStudies}

@@ -989,8 +989,6 @@ if (currentSection === 'featured-anchor') {
 }
 
 
-      if (current) setActiveSection(current);
-
       if (aboutRef.current && !hasAnimated) {
         const rect = aboutRef.current.getBoundingClientRect();
         if (rect.top < window.innerHeight * 0.75) {

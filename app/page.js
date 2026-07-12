@@ -190,8 +190,8 @@ function HeroSection({ scrollToSection }) {
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xs">NG</div>
             <div>
-              <div className="text-white font-medium text-sm">Nitesh Ghodke</div>
-              <div className="text-slate-500 text-xs uppercase tracking-wider">Founder, Helpmate</div>
+              <div className="text-white font-medium text-sm">Dhananjay Pathade</div>
+              <div className="text-slate-500 text-xs uppercase tracking-wider">Founder, Nestwise</div>
             </div>
           </div>
         </div>
@@ -356,9 +356,9 @@ function TestimonialsSection() {
   const testimonials = [
     {
       quote: "He didn't just build a web app — he helped us architect a full-fledged, large-scale platform. He works like a true tech partner, not just a developer.",
-      name: "Nitesh Ghodke",
-      role: "Founder, Helpmate",
-      initials: "NG",
+      name: "Dhananjay Pathade",
+      role: "Founder, Nestwise",
+      initials: "DP",
       gradient: "from-blue-500 to-indigo-500",
       metric: "100+ Inquiries in Month 1"
     },
